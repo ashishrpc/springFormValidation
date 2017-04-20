@@ -46,6 +46,12 @@ public class EmployeeController {
 		// ModelAttribute value should be same as used in the empSave.jsp
 		return new Employee();
 	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String index(Model model) {
+		logger.info("home/index page");
+		return "index";
+	}
 	//http://localhost:8082/spring/emp/save
 	@RequestMapping(value = "/emp/save", method = RequestMethod.GET)
 	public String saveEmployeePage(Model model) {
